@@ -14,6 +14,7 @@ namespace dockertest.Controllers
         public IActionResult Privacy()
         {
             return View();
+            //privacy
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
