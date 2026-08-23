@@ -3,7 +3,7 @@ name: Build and Deploy .NET Docker App to Azure
 on:
   push:
     branches:
-      - main  # Triggers the workflow on pushes to the main branch
+      - master  # Triggers the workflow on pushes to the main branch
 
 env:
   ACR_LOGIN_SERVER: fstcontreg.azurecr.io
