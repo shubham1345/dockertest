@@ -30,7 +30,7 @@ jobs:
     # 3. Build and Tag the Docker image
     - name: Build and Tag Docker Image
       run: |
-        docker build . -f ./dockertest/Dockerfile -t ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }} -t ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest
+        docker build . -f ./Dockerfile -t ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ github.sha }} -t ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:latest
 
     # 4. Push the Docker image to ACR
     - name: Push Image to ACR
