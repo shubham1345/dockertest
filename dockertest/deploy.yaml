@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mvc-app-deployment
+  labels:
+    app: mvc-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mvc-app
+  template:
+    metadata:
+      labels:
+        app: mvc-app
+    spec:
+      containers:
+      - name: mvc-app-container
+        image: shubham54321/mvc-app:v1
+        ports:
+        - containerPort: 8080
+        env:
+        - name: ASPNETCORE_URLS
+          value: "http://+:8080"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mvc-app-service
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 8080
+    nodePort: 30080
+  selector:
+    app: mvc-app
