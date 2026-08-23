@@ -46,3 +46,4 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /src/app .
 ENTRYPOINT ["dotnet", "dockertest.dll"]
+  
